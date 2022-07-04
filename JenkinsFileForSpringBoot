@@ -4,12 +4,12 @@ pipeline {
         maven "maven3.6.2"
     }
     stages {
-        stage('Compile and Clean') {
+        stage('Compile & Clean') {
             steps {
                 sh "mvn clean compile"
             }
         }
-        stage('deploy') {
+        stage('Execution Perf Test') {
             steps {
                 sh "mvn verify"
             }
