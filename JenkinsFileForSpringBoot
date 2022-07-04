@@ -14,10 +14,18 @@ pipeline {
                 sh "mvn verify"
             }
         }
-        stage('Archving') {
+        stage('publish reports') {
             steps {
-                 archiveArtifacts '**/target/jmeter/*.*'
-            }
+             script {
+                 publishHTML target: [
+                     allowMissing:false,
+                     alwaysLinkToLastBuild: false,
+                     keepAll:true,
+                     reportDir: 'target/jmeter/reports/*/',
+                     reportFiles: 'index.html',
+                     reportName: files[i]
+                 ]
+             }
         }
     }
 }
