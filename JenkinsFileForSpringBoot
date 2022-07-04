@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    tools {
+        maven "maven3.6.2"
+    }
+    stages {
+        stage('Compile and Clean') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh "mvn verify"
+            }
+        }
+        stage('Archving') {
+            steps {
+                 archiveArtifacts '**/target/jmeter/*.*'
+            }
+        }
+    }
+}
