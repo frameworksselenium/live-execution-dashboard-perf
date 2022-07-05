@@ -24,7 +24,7 @@ pipeline {
                         keepAll: false,
                         reportDir: '/var/lib/jenkins/workspace/live-execution-dashboard-perf-test/target/jmeter/reports',
                         reportFiles: 'index.html',
-                        reportName: 'HTML Report', reportTitles: 'HTML Report'
+                        reportName: 'HTMLReport', reportTitles: 'HTMLReport'
                      ])
                  }
             }
