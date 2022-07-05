@@ -23,7 +23,7 @@ pipeline {
                         alwaysLinkToLastBuild: false,
                         keepAll: false,
                         reportDir: '/var/lib/jenkins/workspace/live-execution-dashboard-perf-test/target/jmeter/reports/',
-                        reportFiles: 'index.html',
+                        reportFiles: '/var/lib/jenkins/jobs/live-execution-dashboard-perf-test/htmlreports/HTMLReport/Live-Execution-Dashboard/index.html',
                         reportName: 'HTMLReport', reportTitles: 'HTMLReport'
                      ])
                  }
