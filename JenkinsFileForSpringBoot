@@ -17,14 +17,15 @@ pipeline {
         stage('publish reports') {
             steps {
                  script {
-                     publishHTML target: [
-                         allowMissing:false,
-                         alwaysLinkToLastBuild: false,
-                         keepAll:true,
-                         reportDir: 'target/jmeter/reports/*/',
-                         reportFiles: 'index.html',
-                         reportName: files[i]
-                     ]
+                     publishHTML(
+                     [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: '/var/lib/jenkins/workspace/live-execution-dashboard-perf-test/target/jmeter/reports',
+                        reportFiles: 'index.html',
+                        reportName: 'HTML Report', reportTitles: 'HTML Report'
+                     ])
                  }
             }
         }
